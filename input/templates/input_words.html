@@ -1,8 +1,10 @@
-<title>{% block title %}Add Story{% endblock %}</title>
+{% extends 'base.html' %}
+
+<title>{% block title %}Input words for your story!{% endblock %}</title>
 {% block content %}
 {{ form.media }}
 <div class="text-left" style="padding-left:10%">
-    <h2>Add Story</h2>
+    <h2>Input words for your story!</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
