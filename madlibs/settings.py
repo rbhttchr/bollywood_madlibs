@@ -25,7 +25,7 @@ SECRET_KEY = 'nqpz6u3k=-b6ii&a3zbzo*lsi#rc0kj3$07d)_e2-$we7g6b3g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost',]
+ALLOWED_HOSTS = ['localhost', 'ishanp2.pythonanywhere.com']
 
 
 # Application definition
