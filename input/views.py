@@ -4,7 +4,7 @@ from .forms import story1
 from .models import story
 
 # Create your views here.
-def input(request):
+def input(request, story_num):
     if request.method == 'POST':
         form = story1(request.POST, request.FILES)
         if form.is_valid():
@@ -26,11 +26,15 @@ def input(request):
             form_save = form.save(commit=False)
             new_input = form.save()
             print(new_input.id)
-            return redirect('/' + str(new_input.id) + '/output')
+            return redirect('/s000/' + str(new_input.id) + '/output')
     else:
         form = story1()
-    return render(request, 'add_story.html', {'form' : form})
+    return render(request, 'input_words.html', {'form' : form})
 
-def output(request, pk):
-    tuple = story.objects.get(id=pk)
+database = {
+  "s000": story
+}
+
+def output(request, story_num, pk):
+    tuple = database[story_num].objects.get(id=pk)
     return render(request, 'output.html', {'tuple' : tuple, 'pk' : pk, 'current_path': request.get_full_path()})

@@ -28,6 +28,6 @@ from input import views as input_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('input/', input_views.input, name="input"),
-    path('<pk>/output/', input_views.output, name="output"),
+    path('<story_num>/input/', input_views.input, name="input"),
+    path('<story_num>/<pk>/output/', input_views.output, name="output"),
 ]
