@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class story(models.Model):
+class story000(models.Model):
     Bollywood_Actress_Name = models.CharField(max_length=128, default='') # Name of Hindi Actress 1
     Bollywood_Actor_Name = models.CharField(max_length=128, default='') # Name of Hindi Actor
     Body_Part_1 = models.CharField(max_length=128, default='') # Body Part 1

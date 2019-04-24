@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .forms import story1, story001_f
-from .models import story, story001
+from .forms import form000, form001
+from .models import story000, story001
 
 # Create your views here.
 def input(request, story_num):
     if story_num == 's000':
         if request.method == 'POST':
-            form = story1(request.POST, request.FILES)
+            form = form000(request.POST, request.FILES)
             if form.is_valid():
                 Bollywood_Actress_Name = form.cleaned_data.get('Bollywood_Actress_Name')
                 Bollywood_Actor_Name = form.cleaned_data.get('Bollywood_Actor_Name')
@@ -28,11 +28,11 @@ def input(request, story_num):
                 new_input = form.save()
                 return redirect('/' + story_num + '/' + str(new_input.id) + '/output')
         else:
-            form = story1()
+            form = form000()
         return render(request, 'input_words.html', {'form' : form})
     elif story_num == 's001':
         if request.method == 'POST':
-            form = story001_f(request.POST, request.FILES)
+            form = form001(request.POST, request.FILES)
             if form.is_valid():
                 male_name = form.cleaned_data.get('male_name')
                 verb_1 = form.cleaned_data.get('verb_1')
@@ -51,16 +51,14 @@ def input(request, story_num):
                 new_input = form.save()
                 return redirect('/' + story_num + '/' + str(new_input.id) + '/output')
         else:
-            form = story001_f()
+            form = form001()
         return render(request, 'input_words.html', {'form' : form})
 
 database = {
-  "s000": story,
+  "s000": story000,
   "s001": story001
 }
 
 def output(request, story_num, pk):
     tuple = database[story_num].objects.get(id=pk)
-    if story_num == "s000":
-        story_num=''
-    return render(request, 'output'+story_num+'.html', {'tuple' : tuple, 'pk' : pk, 'current_path': request.get_full_path()})
+    return render(request, 'output_'+story_num+'.html', {'tuple' : tuple, 'pk' : pk, 'current_path': request.get_full_path()})
