@@ -1,7 +1,7 @@
 from django.db import models
 from django import forms
 from django.forms import ModelForm
-from .models import story
+from .models import story, story001
 
 class story1(ModelForm):
     Bollywood_Actress_Name = models.CharField(max_length=128) # Name of Hindi Actress 1
@@ -26,3 +26,24 @@ class story1(ModelForm):
                   'Noun', 'Country', 'Occupation_1', 'Past_Tense_Verb',
                   'Occupation_2', 'Adjective_1', 'Adjective_2',
                   'Adjective_3', 'Number_between_1_and_10')
+
+class story001_f(ModelForm):
+    male_name = models.CharField(max_length=128, default='')
+    verb_1 = models.CharField(max_length=128, default='')
+    adjective_1 = models.CharField(max_length=128, default='')
+    girl_name = models.CharField(max_length=128, default='')
+    movement = models.CharField(max_length=128, default='')
+    number_1 = models.CharField(max_length=128, default='')
+    adjective_2 = models.CharField(max_length=128, default='')
+    number_2 = models.CharField(max_length=128, default='')
+    number_3 = models.CharField(max_length=128, default='')
+    bollywood_actor = models.CharField(max_length=128, default='')
+    bollywood_film = models.CharField(max_length=128, default='')
+    adjective_3 = models.CharField(max_length=128, default='')
+
+    class Meta(ModelForm):
+        model = story001
+        fields = ('male_name', 'verb_1', 'adjective_1', 'girl_name',
+                  'movement', 'number_1', 'adjective_2', 'number_2',
+                  'number_3', 'bollywood_actor', 'bollywood_film',
+                  'adjective_3',)
