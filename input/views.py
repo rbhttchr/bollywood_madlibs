@@ -35,14 +35,14 @@ def input(request, story_num):
             form = form001(request.POST, request.FILES)
             if form.is_valid():
                 male_name = form.cleaned_data.get('male_name')
-                verb_1 = form.cleaned_data.get('verb_1')
+                present_participle = form.cleaned_data.get('present_participle')
                 adjective_1 = form.cleaned_data.get('adjective_1')
                 girl_name = form.cleaned_data.get('girl_name')
                 movement = form.cleaned_data.get('movement')
                 number_1 = form.cleaned_data.get('number_1')
                 adjective_2 = form.cleaned_data.get('adjective_2')
                 number_2 = form.cleaned_data.get('number_2')
-                number_3 = form.cleaned_data.get('number_3')
+                location = form.cleaned_data.get('location')
                 bollywood_actor = form.cleaned_data.get('bollywood_actor')
                 bollywood_film = form.cleaned_data.get('bollywood_film')
                 adjective_3 = form.cleaned_data.get('adjective_3')
@@ -62,3 +62,7 @@ database = {
 def output(request, story_num, pk):
     tuple = database[story_num].objects.get(id=pk)
     return render(request, 'output_'+story_num+'.html', {'tuple' : tuple, 'pk' : pk, 'current_path': request.get_full_path()})
+
+def output_img(request, story_num, pk):
+    path = request.get_full_path()
+    return render(request, 'output_'+story_num+'_img.html', {'current_path' : path[:len(path)-len('img')]})

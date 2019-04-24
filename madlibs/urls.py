@@ -30,4 +30,5 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('<story_num>/input/', input_views.input, name="input"),
     path('<story_num>/<pk>/output/', input_views.output, name="output"),
-]
+    path('<story_num>/<pk>/output/img', input_views.output_img, name="output_img"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
