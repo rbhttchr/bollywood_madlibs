@@ -53,8 +53,8 @@ class story002(models.Model):
     noun_1 = models.CharField(max_length=128, default='')
     noun_2 = models.CharField(max_length=128, default='')
     slogan = models.CharField(max_length=512, default='')
-    past_tesne_verb_1 = models.CharField(max_length=128, default='')
-    past_tesne_verb_2 = models.CharField(max_length=128, default='')
+    past_tense_verb_1 = models.CharField(max_length=128, default='')
+    past_tense_verb_2 = models.CharField(max_length=128, default='')
     animal_2 = models.CharField(max_length=128, default='')
     animal_3 = models.CharField(max_length=128, default='')
 

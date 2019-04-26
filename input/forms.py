@@ -62,8 +62,8 @@ class form002(ModelForm):
     noun_1 = models.CharField(max_length=128, default='')
     noun_2 = models.CharField(max_length=128, default='')
     slogan = models.CharField(max_length=512, default='')
-    past_tesne_verb_1 = models.CharField(max_length=128, default='')
-    past_tesne_verb_2 = models.CharField(max_length=128, default='')
+    past_tense_verb_1 = models.CharField(max_length=128, default='')
+    past_tense_verb_2 = models.CharField(max_length=128, default='')
     animal_2 = models.CharField(max_length=128, default='')
     animal_3 = models.CharField(max_length=128, default='')
 
@@ -72,5 +72,5 @@ class form002(ModelForm):
         fields = ('male_name_1', 'male_name_2', 'male_name_3', 'girl_name',
                   'number', 'relative_1', 'relative_2', 'animal_1',
                   'mode_of_transportation', 'city', 'noun_1',
-                  'noun_2', 'slogan', 'past_tesne_verb_1', 'past_tesne_verb_2',
+                  'noun_2', 'slogan', 'past_tense_verb_1', 'past_tense_verb_2',
                   'animal_2', 'animal_3',)

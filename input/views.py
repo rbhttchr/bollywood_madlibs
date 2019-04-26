@@ -71,8 +71,8 @@ def input(request, story_num):
                 noun_1 = form.cleaned_data.get('noun_1')
                 noun_2 = form.cleaned_data.get('noun_2')
                 slogan = form.cleaned_data.get('slogan')
-                past_tesne_verb_1 = form.cleaned_data.get('past_tesne_verb_1')
-                past_tesne_verb_2 = form.cleaned_data.get('past_tesne_verb_2')
+                past_tense_verb_1 = form.cleaned_data.get('past_tense_verb_1')
+                past_tense_verb_2 = form.cleaned_data.get('past_tense_verb_2')
                 animal_2 = form.cleaned_data.get('animal_2')
                 animal_3 = form.cleaned_data.get('animal_3')
 
