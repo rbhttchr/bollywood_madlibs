@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .forms import form000, form001, form002
-from .models import story000, story001, story002
+from .forms import form000, form001, form002, form003
+from .models import story000, story001, story002, story003
 
 # Create your views here.
 def input(request, story_num):
@@ -82,11 +82,36 @@ def input(request, story_num):
         else:
             form = form002()
         return render(request, 'input_words.html', {'form' : form})
+    elif story_num == 's003':
+        if request.method == 'POST':
+            form = form003(request.POST, request.FILES)
+            if form.is_valid():
+                adjective_1 = form.cleaned_data.get('adjective_1')
+                color = form.cleaned_data.get('color')
+                type_of_plural_relative = form.cleaned_data.get('type_of_plural_relative')
+                adjective_2 = form.cleaned_data.get('adjective_2')
+                adjective_3 = form.cleaned_data.get('adjective_3')
+                city = form.cleaned_data.get('city')
+                adjective_4 = form.cleaned_data.get('adjective_4')
+                girl_name = form.cleaned_data.get('girl_name')
+                noun = form.cleaned_data.get('noun')
+                illness = form.cleaned_data.get('illness')
+                adjective_5 = form.cleaned_data.get('adjective_5')
+                adjective_6 = form.cleaned_data.get('adjective_6')
+                adjective_7 = form.cleaned_data.get('adjective_7')
+
+                form_save = form.save(commit=False)
+                new_input = form.save()
+                return redirect('/' + story_num + '/' + str(new_input.id) + '/output')
+        else:
+            form = form003()
+        return render(request, 'input_words.html', {'form' : form})
 
 database = {
   "s000": story000,
   "s001": story001,
   "s002": story002,
+  "s003": story003,
 }
 
 def output(request, story_num, pk):

@@ -1,7 +1,7 @@
 from django.db import models
 from django import forms
 from django.forms import ModelForm
-from .models import story000, story001, story002
+from .models import story000, story001, story002, story003
 
 class form000(ModelForm):
     Bollywood_Actress_Name = models.CharField(max_length=128) # Name of Hindi Actress 1
@@ -74,3 +74,24 @@ class form002(ModelForm):
                   'mode_of_transportation', 'city', 'noun_1',
                   'noun_2', 'slogan', 'past_tense_verb_1', 'past_tense_verb_2',
                   'animal_2', 'animal_3',)
+
+class form003(ModelForm):
+    adjective_1 = models.CharField(max_length=128, default='')
+    color = models.CharField(max_length=128, default='')
+    type_of_plural_relative = models.CharField(max_length=128, default='')
+    adjective_2 = models.CharField(max_length=128, default='')
+    adjective_3 = models.CharField(max_length=128, default='')
+    city = models.CharField(max_length=128, default='')
+    adjective_4 = models.CharField(max_length=128, default='')
+    girl_name = models.CharField(max_length=128, default='')
+    noun = models.CharField(max_length=128, default='')
+    illness = models.CharField(max_length=128, default='')
+    adjective_5 = models.CharField(max_length=128, default='')
+    adjective_6 = models.CharField(max_length=128, default='')
+    adjective_7 = models.CharField(max_length=128, default='')
+
+    class Meta(ModelForm):
+        model = story003
+        fields = ('adjective_1', 'color', 'type_of_plural_relative', 'adjective_2',
+                  'adjective_3', 'city', 'adjective_4', 'girl_name', 'noun',
+                  'illness', 'adjective_5', 'adjective_6', 'adjective_7',)
