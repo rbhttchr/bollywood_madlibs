@@ -107,15 +107,15 @@ def input(request, story_num):
             form = form003()
         return render(request, 'input_words.html', {'form' : form})
 
-database = {
-  "s000": story000,
-  "s001": story001,
-  "s002": story002,
-  "s003": story003,
+database_list = {
+  's000': story000,
+  's001': story001,
+  's002': story002,
+  's003': story003,
 }
 
 def output(request, story_num, pk):
-    tuple = database[story_num].objects.get(id=pk)
+    tuple = database_list[story_num].objects.get(id=pk)
     return render(request, 'output_'+story_num+'.html', {'tuple' : tuple, 'pk' : pk, 'current_path': request.get_full_path()})
 
 def output_img(request, story_num, pk):
