@@ -35,11 +35,12 @@ def input(request, story_num):
             form = form001(request.POST, request.FILES)
             if form.is_valid():
                 male_name = form.cleaned_data.get('male_name')
-                present_participle = form.cleaned_data.get('present_participle')
+                action_word = form.cleaned_data.get('action_word')
                 adjective_1 = form.cleaned_data.get('adjective_1')
                 girl_name = form.cleaned_data.get('girl_name')
                 movement = form.cleaned_data.get('movement')
                 number_1 = form.cleaned_data.get('number_1')
+                location = form.cleaned_data.get('location')
                 adjective_2 = form.cleaned_data.get('adjective_2')
                 number_2 = form.cleaned_data.get('number_2')
                 location = form.cleaned_data.get('location')

@@ -23,11 +23,12 @@ class story000(models.Model):
 
 class story001(models.Model):
     male_name = models.CharField(max_length=128, default='')
-    present_participle = models.CharField(max_length=128, default='')
+    action_word = models.CharField(max_length=128, default='')
     adjective_1 = models.CharField(max_length=128, default='')
     girl_name = models.CharField(max_length=128, default='')
     movement = models.CharField(max_length=128, default='')
     number_1 = models.CharField(max_length=128, default='')
+    location = models.CharField(max_length=128, default='')
     adjective_2 = models.CharField(max_length=128, default='')
     number_2 = models.CharField(max_length=128, default='')
     location = models.CharField(max_length=128, default='')

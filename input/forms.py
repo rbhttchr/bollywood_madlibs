@@ -29,11 +29,12 @@ class form000(ModelForm):
 
 class form001(ModelForm):
     male_name = models.CharField(max_length=128, default='')
-    present_participle = models.CharField(max_length=128, default='')
+    action_word = models.CharField(max_length=128, default='')
     adjective_1 = models.CharField(max_length=128, default='')
     girl_name = models.CharField(max_length=128, default='')
     movement = models.CharField(max_length=128, default='')
     number_1 = models.CharField(max_length=128, default='')
+    location = models.CharField(max_length=128, default='')
     adjective_2 = models.CharField(max_length=128, default='')
     number_2 = models.CharField(max_length=128, default='')
     location = models.CharField(max_length=128, default='')
@@ -43,9 +44,9 @@ class form001(ModelForm):
 
     class Meta(ModelForm):
         model = story001
-        fields = ('male_name', 'present_participle', 'adjective_1', 'girl_name',
-                  'movement', 'number_1', 'adjective_2', 'number_2',
-                  'bollywood_actor', 'bollywood_film', 'adjective_3',)
+        fields = ('male_name', 'action_word', 'adjective_1', 'girl_name',
+                  'movement', 'number_1', 'location', 'adjective_2',
+                  'number_2', 'bollywood_actor', 'bollywood_film', 'adjective_3',)
 
 class form002(ModelForm):
     male_name_1 = models.CharField(max_length=128, default='')
