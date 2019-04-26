@@ -88,7 +88,7 @@ def input(request, story_num):
             if form.is_valid():
                 adjective_1 = form.cleaned_data.get('adjective_1')
                 color = form.cleaned_data.get('color')
-                type_of_plural_relative = form.cleaned_data.get('type_of_plural_relative')
+                type_of_relative = form.cleaned_data.get('type_of_relative')
                 adjective_2 = form.cleaned_data.get('adjective_2')
                 adjective_3 = form.cleaned_data.get('adjective_3')
                 city = form.cleaned_data.get('city')

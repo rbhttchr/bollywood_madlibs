@@ -78,7 +78,7 @@ class form002(ModelForm):
 class form003(ModelForm):
     adjective_1 = models.CharField(max_length=128, default='')
     color = models.CharField(max_length=128, default='')
-    type_of_plural_relative = models.CharField(max_length=128, default='')
+    type_of_relative = models.CharField(max_length=128, default='')
     adjective_2 = models.CharField(max_length=128, default='')
     adjective_3 = models.CharField(max_length=128, default='')
     city = models.CharField(max_length=128, default='')
@@ -92,6 +92,6 @@ class form003(ModelForm):
 
     class Meta(ModelForm):
         model = story003
-        fields = ('adjective_1', 'color', 'type_of_plural_relative', 'adjective_2',
+        fields = ('adjective_1', 'color', 'type_of_relative', 'adjective_2',
                   'adjective_3', 'city', 'adjective_4', 'girl_name', 'noun',
                   'illness', 'adjective_5', 'adjective_6', 'adjective_7',)

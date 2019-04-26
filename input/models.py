@@ -64,7 +64,7 @@ class story002(models.Model):
 class story003(models.Model):
     adjective_1 = models.CharField(max_length=128, default='')
     color = models.CharField(max_length=128, default='')
-    type_of_plural_relative = models.CharField(max_length=128, default='')
+    type_of_relative = models.CharField(max_length=128, default='')
     adjective_2 = models.CharField(max_length=128, default='')
     adjective_3 = models.CharField(max_length=128, default='')
     city = models.CharField(max_length=128, default='')
