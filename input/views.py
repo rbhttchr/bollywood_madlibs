@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .forms import form000, form001
-from .models import story000, story001
+from .forms import form000, form001, form002
+from .models import story000, story001, story002
 
 # Create your views here.
 def input(request, story_num):
@@ -53,10 +53,39 @@ def input(request, story_num):
         else:
             form = form001()
         return render(request, 'input_words.html', {'form' : form})
+    elif story_num == 's002':
+        if request.method == 'POST':
+            form = form002(request.POST, request.FILES)
+            if form.is_valid():
+                male_name_1 = form.cleaned_data.get('male_name_1')
+                male_name_2 = form.cleaned_data.get('male_name_2')
+                male_name_3 = form.cleaned_data.get('male_name_3')
+                girl_name = form.cleaned_data.get('girl_name')
+                number = form.cleaned_data.get('number')
+                relative_1 = form.cleaned_data.get('relative_1')
+                relative_2 = form.cleaned_data.get('relative_2')
+                animal_1 = form.cleaned_data.get('animal_1')
+                mode_of_transportation = form.cleaned_data.get('mode_of_transportation')
+                city = form.cleaned_data.get('city')
+                noun_1 = form.cleaned_data.get('noun_1')
+                noun_2 = form.cleaned_data.get('noun_2')
+                slogan = form.cleaned_data.get('slogan')
+                past_tesne_verb_1 = form.cleaned_data.get('past_tesne_verb_1')
+                past_tesne_verb_2 = form.cleaned_data.get('past_tesne_verb_2')
+                animal_2 = form.cleaned_data.get('animal_2')
+                animal_3 = form.cleaned_data.get('animal_3')
+
+                form_save = form.save(commit=False)
+                new_input = form.save()
+                return redirect('/' + story_num + '/' + str(new_input.id) + '/output')
+        else:
+            form = form002()
+        return render(request, 'input_words.html', {'form' : form})
 
 database = {
   "s000": story000,
-  "s001": story001
+  "s001": story001,
+  "s002": story002,
 }
 
 def output(request, story_num, pk):

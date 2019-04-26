@@ -1,7 +1,7 @@
 from django.db import models
 from django import forms
 from django.forms import ModelForm
-from .models import story000, story001
+from .models import story000, story001, story002
 
 class form000(ModelForm):
     Bollywood_Actress_Name = models.CharField(max_length=128) # Name of Hindi Actress 1
@@ -46,3 +46,30 @@ class form001(ModelForm):
         fields = ('male_name', 'present_participle', 'adjective_1', 'girl_name',
                   'movement', 'number_1', 'adjective_2', 'number_2',
                   'bollywood_actor', 'bollywood_film', 'adjective_3',)
+
+class form002(ModelForm):
+    male_name_1 = models.CharField(max_length=128, default='')
+    male_name_2 = models.CharField(max_length=128, default='')
+    male_name_3 = models.CharField(max_length=128, default='')
+    girl_name = models.CharField(max_length=128, default='')
+    number = models.CharField(max_length=128, default='')
+    relative_1 = models.CharField(max_length=128, default='')
+    relative_2 = models.CharField(max_length=128, default='')
+    animal_1 = models.CharField(max_length=128, default='')
+    mode_of_transportation = models.CharField(max_length=128, default='')
+    city = models.CharField(max_length=128, default='')
+    noun_1 = models.CharField(max_length=128, default='')
+    noun_2 = models.CharField(max_length=128, default='')
+    slogan = models.CharField(max_length=512, default='')
+    past_tesne_verb_1 = models.CharField(max_length=128, default='')
+    past_tesne_verb_2 = models.CharField(max_length=128, default='')
+    animal_2 = models.CharField(max_length=128, default='')
+    animal_3 = models.CharField(max_length=128, default='')
+
+    class Meta(ModelForm):
+        model = story002
+        fields = ('male_name_1', 'male_name_2', 'male_name_3', 'girl_name',
+                  'number', 'relative_1', 'relative_2', 'animal_1',
+                  'mode_of_transportation', 'city', 'noun_1',
+                  'noun_2', 'slogan', 'past_tesne_verb_1', 'past_tesne_verb_2',
+                  'animal_2', 'animal_3',)
