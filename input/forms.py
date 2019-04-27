@@ -4,28 +4,28 @@ from django.forms import ModelForm
 from .models import story000, story001, story002, story003
 
 class form000(ModelForm):
-    Bollywood_Actress_Name = models.CharField(max_length=128) # Name of Hindi Actress 1
-    Bollywood_Actor_Name = models.CharField(max_length=128) # Name of Hindi Actor
-    Body_Part_1 = models.CharField(max_length=128) # Body Part 1
-    Body_Part_2 = models.CharField(max_length=128) # Body Part 2
-    Old_Bollywood_Actor = models.CharField(max_length=128) # Old Hindi Actor
-    Noun = models.CharField(max_length=128) # Noun
-    Country = models.CharField(max_length=128) # Country
-    Occupation_1 = models.CharField(max_length=128) # Occupation 1
-    Past_Tense_Verb = models.CharField(max_length=128) # Past Tense Verb
-    Occupation_2 = models.CharField(max_length=128) # Occupation 2
-    Adjective_1 = models.CharField(max_length=128) # Adjective 1
-    Adjective_2 = models.CharField(max_length=128) # Adjective 2
-    Adjective_3 = models.CharField(max_length=128) # Adjective 3
-    Number_between_1_and_10 = models.CharField(max_length=128) # Number between 1-10
+    bollywood_actress_name = models.CharField(max_length=128) # Name of Hindi Actress 1
+    bollywood_actor_name = models.CharField(max_length=128) # Name of Hindi Actor
+    body_part_1 = models.CharField(max_length=128) # Body Part 1
+    body_part_2 = models.CharField(max_length=128) # Body Part 2
+    old_Bollywood_actor = models.CharField(max_length=128) # Old Hindi Actor
+    noun = models.CharField(max_length=128) # Noun
+    country = models.CharField(max_length=128) # Country
+    occupation_1 = models.CharField(max_length=128) # Occupation 1
+    past_tense_verb = models.CharField(max_length=128) # Past Tense Verb
+    occupation_2 = models.CharField(max_length=128) # Occupation 2
+    adjective_1 = models.CharField(max_length=128) # Adjective 1
+    adjective_2 = models.CharField(max_length=128) # Adjective 2
+    adjective_3 = models.CharField(max_length=128) # Adjective 3
+    number_between_1_and_10 = models.CharField(max_length=128) # Number between 1-10
 
     class Meta(ModelForm):
         model = story000
-        fields = ('Bollywood_Actress_Name', 'Bollywood_Actor_Name',
-                  'Body_Part_1', 'Body_Part_2', 'Old_Bollywood_Actor',
-                  'Noun', 'Country', 'Occupation_1', 'Past_Tense_Verb',
-                  'Occupation_2', 'Adjective_1', 'Adjective_2',
-                  'Adjective_3', 'Number_between_1_and_10')
+        fields = ('bollywood_actress_name', 'bollywood_actor_name',
+                  'body_part_1', 'body_part_2', 'old_Bollywood_actor',
+                  'noun', 'country', 'occupation_1', 'past_tense_verb',
+                  'occupation_2', 'adjective_1', 'adjective_2',
+                  'adjective_3', 'number_between_1_and_10')
 
 class form001(ModelForm):
     male_name = models.CharField(max_length=128, default='')
@@ -37,8 +37,7 @@ class form001(ModelForm):
     location = models.CharField(max_length=128, default='')
     adjective_2 = models.CharField(max_length=128, default='')
     number_2 = models.CharField(max_length=128, default='')
-    location = models.CharField(max_length=128, default='')
-    bollywood_actor = models.CharField(max_length=128, default='')
+    bollywood_actor_name = models.CharField(max_length=128, default='')
     bollywood_film = models.CharField(max_length=128, default='')
     adjective_3 = models.CharField(max_length=128, default='')
 
@@ -46,7 +45,7 @@ class form001(ModelForm):
         model = story001
         fields = ('male_name', 'action_word', 'adjective_1', 'girl_name',
                   'movement', 'number_1', 'location', 'adjective_2',
-                  'number_2', 'bollywood_actor', 'bollywood_film', 'adjective_3',)
+                  'number_2', 'bollywood_actor_name', 'bollywood_film', 'adjective_3',)
 
 class form002(ModelForm):
     male_name_1 = models.CharField(max_length=128, default='')

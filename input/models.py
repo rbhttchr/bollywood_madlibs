@@ -2,20 +2,20 @@ from django.db import models
 
 # Create your models here.
 class story000(models.Model):
-    Bollywood_Actress_Name = models.CharField(max_length=128, default='') # Name of Hindi Actress 1
-    Bollywood_Actor_Name = models.CharField(max_length=128, default='') # Name of Hindi Actor
-    Body_Part_1 = models.CharField(max_length=128, default='') # Body Part 1
-    Body_Part_2 = models.CharField(max_length=128, default='') # Body Part 2
-    Old_Bollywood_Actor = models.CharField(max_length=128, default='') # Old Hindi Actor
-    Noun = models.CharField(max_length=128, default='') # Noun
-    Country = models.CharField(max_length=128, default='') # Country
-    Occupation_1 = models.CharField(max_length=128, default='') # Occupation 1
-    Past_Tense_Verb = models.CharField(max_length=128, default='') # Past Tense Verb
-    Occupation_2 = models.CharField(max_length=128, default='') # Occupation 2
-    Adjective_1 = models.CharField(max_length=128, default='') # Adjective 1
-    Adjective_2 = models.CharField(max_length=128, default='') # Adjective 2
-    Adjective_3 = models.CharField(max_length=128, default='') # Adjective 3
-    Number_between_1_and_10 = models.CharField(max_length=128, default='') # Number between 1-10
+    bollywood_actress_name = models.CharField(max_length=128, default='') # Name of Hindi Actress 1
+    bollywood_actor_name = models.CharField(max_length=128, default='') # Name of Hindi Actor
+    body_part_1 = models.CharField(max_length=128, default='') # Body Part 1
+    body_part_2 = models.CharField(max_length=128, default='') # Body Part 2
+    old_Bollywood_actor = models.CharField(max_length=128, default='') # Old Hindi Actor
+    noun = models.CharField(max_length=128, default='') # Noun
+    country = models.CharField(max_length=128, default='') # Country
+    occupation_1 = models.CharField(max_length=128, default='') # Occupation 1
+    past_tense_verb = models.CharField(max_length=128, default='') # Past Tense Verb
+    occupation_2 = models.CharField(max_length=128, default='') # Occupation 2
+    adjective_1 = models.CharField(max_length=128, default='') # Adjective 1
+    adjective_2 = models.CharField(max_length=128, default='') # Adjective 2
+    adjective_3 = models.CharField(max_length=128, default='') # Adjective 3
+    number_between_1_and_10 = models.CharField(max_length=128, default='') # Number between 1-10
 
 
     def __str__(self):
@@ -31,8 +31,7 @@ class story001(models.Model):
     location = models.CharField(max_length=128, default='')
     adjective_2 = models.CharField(max_length=128, default='')
     number_2 = models.CharField(max_length=128, default='')
-    location = models.CharField(max_length=128, default='')
-    bollywood_actor = models.CharField(max_length=128, default='')
+    bollywood_actor_name = models.CharField(max_length=128, default='')
     bollywood_film = models.CharField(max_length=128, default='')
     adjective_3 = models.CharField(max_length=128, default='')
 
