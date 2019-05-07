@@ -1,0 +1,36 @@
+Hi,
+
+This web application was made using the Django framework.
+
+We have added a number of stories to the project. If you would like to add another story, there are a number of steps you must follow. All stories have their own model and form in the input app.
+
+1) Write the story leaving blanks for parts of speech you would like to be inputted into the story.
+   a. You should type the story and replace the missing word with in your story with: <b>{{tuple.part_of_speech}}</b>
+      ie. "The sky was [color]" would be converted to "The sky was {{tuple.color}}"
+      Note that if you have multiple blanks of the same type of speech, you should number them such as color_1 and color_2
+   b. Create a new .html file in the directory input/templates/ and call it input_sXXX.html; replace XXX with the first available story number
+   c. Please use an input/template/story_frame.html as a template. Be sure to update the name and the author.
+   c. Go to templates/home.html and add a new button for your new story. Remember to use the correct story number (XXX) and to name your story
+2) You must now create a model for your story:
+   a. Open input/models.py
+   b. Create a new model for your story:  class storyXXX(models.Model)
+   c. For each unique blank in your story, you must add a char field. Please follow the existing models as an example
+   d. You can optionally add a function def __str__(self) to help you identify the entry in the database
+   e. We need to update our migrations. In your terminal, run: python3 manage.py makemigrations && python3 manage.py migrate
+3) We must create a new form
+   a. In input/forms.py, at the top of the file, import your story by adding: from .models import storyXXX
+   b. We will create a new form for this story: class formXXX(ModelForm)
+   c. In this class, we can copy and paste the lines creating CharFields for each part of speech from models.py (view existing forms as example)
+   d. You must also add a "class Meta(ModelForm)" where we will set model=storyXXX and create a tuple, fields, and add each of our parts of speech to it. Once again, view existing forms as example.
+4) Update input/views.py
+   a. We will begin by importing both the new form and model into input/views.py similar to step 3a. Add "from .forms import formXXX" and "from .models import storyXXX".
+   b. Add your story to both database_list and form_list following the same pattern as the existing entries
+   c. We need to now update update the input function:
+      You should cross check your list of parts of speech in your story with those that are already added to the input function. If your part of speech does not already exist in the input function,
+      (with an exact match), add your part of speech to the list following the same pattern as those that already exist.
+5) Optional: Update input/admin.py
+   a. You can optionally add your new model to input/admin.py. This allows you as the admin to update records in the database
+   b. You will first need to import the model to the admin page: from .models import storyXXX
+   c. add to the file: admin.site.register(storyXXX)
+
+You should now be able to refresh the web app and play madlibs with your new story!
